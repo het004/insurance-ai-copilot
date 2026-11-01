@@ -1,0 +1,28 @@
+services:
+  backend:
+    build: ./backend
+    env_file:
+      - ./backend/.env
+    environment:
+      DATA_DIR: /data
+      CORS_ORIGINS: http://localhost:3000
+    volumes:
+      - copilot-data:/data          # SQLite DB + ChromaDB + uploads persist here
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        BACKEND_URL: http://backend:8000   # baked into Next.js rewrites at build time
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+volumes:
+  copilot-data:

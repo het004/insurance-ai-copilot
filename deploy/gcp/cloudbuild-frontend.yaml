@@ -1,0 +1,20 @@
+# Builds the Next.js frontend with the backend URL baked into its /api proxy (Next.js reads rewrites at build time).
+# Used by deploy.sh:  gcloud builds submit frontend --config deploy/gcp/cloudbuild-frontend.yaml --substitutions=...
+steps:
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - --build-arg=BACKEND_URL=${_BACKEND_URL}
+      - --build-arg=NEXT_PUBLIC_SPEECH_LANG=${_SPEECH_LANG}
+      - -t
+      - ${_IMAGE}
+      - .
+images:
+  - ${_IMAGE}
+substitutions:
+  _BACKEND_URL: http://localhost:8000
+  _SPEECH_LANG: en-US
+  _IMAGE: ""
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: 1200s

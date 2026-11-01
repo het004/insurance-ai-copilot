@@ -1,0 +1,9 @@
+# Uploaded to Cloud Build — never ship secrets or local data
+.env
+.venv/
+data/
+data-test/
+__pycache__/
+*.pyc
+.pytest_cache/
+tests/
