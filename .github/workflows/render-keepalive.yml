@@ -3,7 +3,7 @@ name: Keep Insurance AI Copilot Awake
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "3,13,23,33,43,53 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -27,11 +27,15 @@ jobs:
               try:
                   req = urllib.request.Request(
                       url,
-                      headers={"User-Agent": "Insurance-AI-KeepAlive/1.0"}
+                      headers={
+                          "User-Agent": "Insurance-AI-KeepAlive/1.0"
+                      }
                   )
-                  with urllib.request.urlopen(req, timeout=60) as response:
+                  with urllib.request.urlopen(
+                      req, timeout=60
+                  ) as response:
                       print("HTTP status:", response.status)
-                      print("Request sent successfully.")
+                      print("Render inbound request successful.")
                   break
               except Exception as exc:
                   print(f"Attempt {attempt + 1} failed: {exc}")
