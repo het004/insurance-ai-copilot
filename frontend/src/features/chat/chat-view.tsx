@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { Car, HeartHandshake, HeartPulse, House, Loader2, PanelRightOpen, PiggyBank, RotateCcw, SendHorizontal, Sparkles,
+import { Car, HeartHandshake, HeartPulse, House, Loader2, PanelRightOpen, Sprout, RotateCcw, SendHorizontal, Sparkles,
   UserRoundCheck, Volume2, VolumeX } from "lucide-react";
 import type { AgentRun, ChatMessage, Identity, VoiceState } from "@/types";
 import { IdentityChip } from "@/features/identity/identity-cards";
@@ -303,7 +303,7 @@ export function ChatView() {
                 </p>
                 <div className="mt-6 grid w-full grid-cols-2 gap-2.5 sm:grid-cols-5">
                   {PORTFOLIO_PROMPTS.map(({ label, q }, i) => {
-                    const Icon = [Car, HeartPulse, HeartHandshake, PiggyBank, House][i];
+                    const Icon = [Car, HeartPulse, HeartHandshake, Sprout, House][i];
                     return (
                       <button key={label} onClick={() => send(q)}
                         className={cn("flex flex-col items-center gap-2 rounded-2xl border border-border bg-card-solid p-4 text-center text-sm font-medium text-navy shadow-card transition hover:-translate-y-0.5 hover:border-primary/50",

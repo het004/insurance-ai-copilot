@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight, BadgeCheck, Car, Clock, FileWarning, HeartHandshake, HeartPulse, House, Landmark,
-  MessageSquareText, Mic, PiggyBank, RefreshCcw, ShieldCheck, UserRound, UserRoundCheck,
+  MessageSquareText, Mic, Sprout, RefreshCcw, ShieldCheck, UserRound, UserRoundCheck,
 } from "lucide-react";
 import type { Health } from "@/types";
 import { api } from "@/services/api";
@@ -36,7 +36,7 @@ const PRODUCTS = [
     q: "I want a life protection plan",
   },
   {
-    icon: PiggyBank, title: "Retirement & Savings", sub: "Shariah-compliant", from: "Retirement Plan from SAR 1,000 a month",
+    icon: Sprout, title: "Retirement & Savings", sub: "Shariah-compliant", from: "Retirement Plan from SAR 1,000 a month",
     plans: ["Retirement Plan", "Savings Plan", "Education Plan"],
     points: ["Monthly income for 5–20 years after you retire", "Save for any goal, with Takaful protection", "Save for your child's university"],
     q: "I want a retirement savings plan",
@@ -95,7 +95,7 @@ export default function HomePage() {
         <div className="grid md:grid-cols-[1.3fr_1fr]">
           <div className="p-6 md:p-8">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-              <PiggyBank className="size-3.5" /> Retirement Plan · new
+              <Sprout className="size-3.5" /> Retirement Plan · new
             </span>
             <h2 className="mt-3 text-2xl font-bold md:text-3xl">Your retirement, planned in one conversation</h2>
             <p className="mt-2 text-sm text-muted-foreground">

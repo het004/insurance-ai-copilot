@@ -1,6 +1,6 @@
 "use client";
 
-import { Bike, Car, HeartHandshake, HeartPulse, House, PiggyBank, RefreshCcw, Truck } from "lucide-react";
+import { Bike, Car, HeartHandshake, HeartPulse, House, Sprout, RefreshCcw, Truck } from "lucide-react";
 import type { Policy, RenewalResult } from "@/types";
 import { Badge, statusVariant } from "@/components/ui/badge";
 import { cn, fmtDate, sar, sarShort } from "@/lib/utils";
@@ -8,7 +8,7 @@ import { cn, fmtDate, sar, sarShort } from "@/lib/utils";
 export function policyIcon(type: string) {
   if (type.includes("Motorcycle")) return Bike;
   if (type === "Life") return HeartHandshake;
-  if (type.startsWith("Retirement")) return PiggyBank;
+  if (type.startsWith("Retirement")) return Sprout;
   if (type.includes("Commercial")) return Truck;
   if (type.startsWith("Motor")) return Car;
   if (type === "Health") return HeartPulse;

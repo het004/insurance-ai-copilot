@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  CalendarClock, Car, Check, Gauge, HeartHandshake, HeartPulse, House, Landmark, Loader2, PiggyBank, ShieldCheck,
+  CalendarClock, Car, Check, Gauge, HeartHandshake, HeartPulse, House, Landmark, Loader2, Sprout, ShieldCheck,
   ShoppingCart, SlidersHorizontal, Sparkles, TrendingUp, UserRound, Wallet, X,
 } from "lucide-react";
 import { INSURER_SHORT } from "@/lib/brand";
@@ -30,7 +30,7 @@ export function RiskGauge({ score, band }: { score: number; band: string }) {
 }
 
 export const LINE_ICON: Record<string, React.ElementType> = {
-  health: HeartPulse, motor: Car, life: HeartHandshake, savings: PiggyBank, general: House, home: House,
+  health: HeartPulse, motor: Car, life: HeartHandshake, savings: Sprout, general: House, home: House,
 };
 export const LINE_LABEL: Record<string, string> = {
   health: "Health", motor: "Motor", life: "Life", savings: "Retirement & Savings", general: "General", home: "General",

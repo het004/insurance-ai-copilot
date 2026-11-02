@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  Bike, Building2, Calculator, Car, HeartHandshake, HeartPulse, House, Loader2, PiggyBank, Sparkles, Zap,
+  Bike, Building2, Calculator, Car, HeartHandshake, HeartPulse, House, Loader2, Sprout, Sparkles, Zap,
 } from "lucide-react";
 import type { QuoteResult } from "@/types";
 import { consoleApi as api } from "@/services/api";
@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 type Line = "health" | "motor" | "life" | "savings" | "general";
 const LINES: { id: Line; label: string; icon: React.ElementType }[] = [
   { id: "motor", label: "Motor", icon: Car }, { id: "health", label: "Health", icon: HeartPulse },
-  { id: "life", label: "Life", icon: HeartHandshake }, { id: "savings", label: "Savings", icon: PiggyBank },
+  { id: "life", label: "Life", icon: HeartHandshake }, { id: "savings", label: "Savings", icon: Sprout },
   { id: "general", label: "General", icon: House },
 ];
 const VEHICLES = [
